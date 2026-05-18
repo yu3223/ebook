@@ -1,0 +1,20 @@
+backend:
+  name: git-gateway
+  branch: main # 對應您 GitHub 的主要分支
+
+media_folder: "static/img" # 護理人員上傳圖片時存放的資料夾
+public_folder: "/img"      # 前端網頁讀取圖片時的相對路徑
+
+collections:
+  - name: "guide"
+    label: "出院指南文章"
+    folder: "docs" # 對應 Docusaurus 放文章的資料夾
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "文章標題", name: "title", widget: "string" }
+      - { label: "側欄顯示名稱", name: "sidebar_label", widget: "string" }
+      - { label: "章節權重(排序用)", name: "sidebar_position", widget: "number", type: "int" }
+      - { label: "封面圖片", name: "image", widget: "image", required: false }
+      - { label: "語音導讀音訊 (.mp3)", name: "audio_url", widget: "file", required: false }
+      - { label: "衛教核心正文", name: "body", widget: "markdown" }
