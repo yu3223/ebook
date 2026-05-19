@@ -1,6 +1,7 @@
 backend:
   name: git-gateway
   branch: main # 對應您 GitHub 的主要分支
+  site_domain: aesthetic-tulumba-a94a27.netlify.app
 
 media_folder: "static/img" # 護理人員上傳圖片時存放的資料夾
 public_folder: "/img"      # 前端網頁讀取圖片時的相對路徑
